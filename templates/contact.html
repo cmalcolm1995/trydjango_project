@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h1>Welcome to the contact page</h1>
+<p>This is a template for the contact page which you are on</p>
+
+<p> 
+	{{ my_text }}, {{ my_number }}, {{ my_list }}
+</p>
+
+<ul>
+	<li>Item 1</li>
+	<li>Item 2</li>
+</ul>
+
+<ul>
+{% for item in my_list %}
+	{% if item == 567 %}
+		<li>{{ forloop.counter }} - {{ item|add:33 }}</li>
+	{% else %}
+		<li>{{ forloop.counter }} - {{ item }}</li>
+	{% endif %}
+
+
+
+{% endfor %}
+</ul>
+
+{% endblock %}
